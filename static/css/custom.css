@@ -36,3 +36,7 @@ img.sidebar-image {
 #mce-responses {
   margin-bottom: 20px;
 }
+
+p a { 
+  text-decoration: underline
+}
