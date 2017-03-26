@@ -26,6 +26,9 @@
         <li><a href="{{ $url }}/{{ .url }}">{{ .name }}</a></li>
       {{ end }}
     </ul>
+
+    {{ partial "mailingList.html" . }}
+
     {{ partial "socialButtonsInSideBar.html" . }}
 
     <div class="copyright">
