@@ -10,6 +10,8 @@ tags = ["creative", "portfolio", "projects", "minimal", "responsive"]
 features = ["disqus", "bootstrap", "responsive", "google analytics"]
 min_version = 0.17
 
+pluralizeListTitles = false
+
 [author]
   name = "Kishan B"
   homepage = "https://github.com/kishaningithub"

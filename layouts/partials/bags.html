@@ -1,17 +1,17 @@
 <div class="col-xs-12 col-sm-8 col-md-9 content-column">
-    {{ partial "mobileNavToggle.html" .content }}
+    {{ partial "mobileNavToggle.html" . }}
     <div class="grid">
         <div class="row">
-          {{ range (where .content.Data.Pages "Section" .bag ) }}
+          {{ range (where .Data.Pages "Section" "bags" ) }}
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 masonry-item">
                   <div class="box-masonry">
                       {{ if and (isset .Params "image") .Params.image }}
                         {{ if eq .Params.showonlyimage true }}
-                        <a href="{{ .Permalink }}" title="" class="box-masonry-image with-hover-overlay">
+                        <a href="{{ .Params.link }}" title="" class="box-masonry-image with-hover-overlay">
                         {{ else }}
-                        <a href="{{ .Permalink }}" title="" class="box-masonry-image with-hover-overlay with-hover-icon">
+                        <a href="{{ .Params.link }}" title="" class="box-masonry-image with-hover-overlay with-hover-icon">
                         {{ end }}
-                            <img src="/img/{{ $.bag }}/{{ .Params.image }}" alt="" class="img-responsive">
+                            <img src="/img/{{ .Params.image }}" alt="" class="img-responsive">
                         </a>
                       {{ end }}
                       {{ if eq .Params.showonlyimage true }}
@@ -19,8 +19,9 @@
                       {{ else }}
                       <div class="box-masonry-text">
                       {{ end }}
-                          <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                          <h4><a href="{{ .Params.link }}">{{ .Title }}</a></h4>
                           <div class="box-masonry-desription">
+
                               <p>{{ .Summary }}</p>
                               {{ if .Truncated }}
                               <div class="read-more-link">

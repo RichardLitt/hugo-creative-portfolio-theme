@@ -8,7 +8,7 @@
           <a href="{{ .Params.buy }}" target="_blank">
         {{ end }}
           {{ if and (isset .Params "image") .Params.image }}
-            <img src="../../{{ .Params.image }}" alt="" class="img-responsive">
+            <img src="/img/{{ index (split (trim $.RelPermalink "/") "/") 0 }}/{{ .Params.image }}" alt="" class="img-responsive">
           {{ end }}
         {{ if .Params.buy }}
           </a>
