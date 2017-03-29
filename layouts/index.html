@@ -1,10 +1,4 @@
 {{ define "main" }}
-  {{ $content := . }}
-    <!-- This adds the bag to a list, but doesn't send only that list in. Which is less than ideal.
-    Two ways around this:
-      - Send only bag content we want through to the partial using dict
-      - Or, add everything to the $scratch, and then have another template that sorts the range.
-  -->
 
   {{ partial "bags" . }}
 
